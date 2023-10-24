@@ -191,7 +191,6 @@ class CollectionFilter {
     }
 
     Filtrer() {
-        console.log("----------------------------------------------------------------");
         let dataDupe = this.data;
         const sort = this.params.sort ? this.params.sort : undefined;
         const limit = this.params.offset ? this.params.limit : undefined;
@@ -235,7 +234,6 @@ class CollectionFilter {
                 dataDupe = this.data;
         }
 
-        console.log(this.data);
     }
 
     SortDataByLimitAndOffset(limit, offset) {
@@ -244,9 +242,6 @@ class CollectionFilter {
         try {
             const startIndex = limit * offset;
             const endIndex = Object.keys(this.data).length > startIndex + limit? startIndex + limit: Object.keys(this.data).length;
-            //endIndex = Object.keys(this.data).length > endIndex? endIndex : Object.keys(this.data).length; 
-            console.log(startIndex);
-            console.log(endIndex);
             this.data = this.data.slice(startIndex, endIndex);
         } catch {}
     }
